@@ -43,11 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelagem\Classes\Biblioteca.cs" />
+    <Compile Include="Modelagem\Classes\Emprestimo.cs" />
+    <Compile Include="Modelagem\Classes\Livro.cs" />
+    <Compile Include="Modelagem\Classes\Usuario.cs" />
+    <Compile Include="Modelagem\Interfaces\IDisponivel.cs" />
+    <Compile Include="Modelagem\Interfaces\IEmprestimosRepo.cs" />
+    <Compile Include="Modelagem\Interfaces\ILivrosRepo.cs" />
+    <Compile Include="Modelagem\Interfaces\IMostrar.cs" />
+    <Compile Include="Modelagem\Interfaces\IUsuariosRepo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
