@@ -43,15 +43,15 @@ namespace DesafioProgramacao
                         b1.AdicionarEmprestimo();
                         break;
                     case 4 :
-                        Console.Write("Id Livro:\t");
+                        Console.Write("Id Livro: ");
                         b1.RemoverEmprestimo(b1.ReturnLivro(int.Parse(Console.ReadLine())));
                         break;
                     case 8 :
-                        Console.Write("Id Usuario:\t");
+                        Console.Write("Id Usuario: ");
                         b1.RemoverUsuario(b1.ReturnUsuario(int.Parse(Console.ReadLine())));
                         break;
                     case 9 :
-                        Console.Write("Id Livro:\t");
+                        Console.Write("Id Livro: ");
                         b1.RemoverLivro(b1.ReturnLivro(int.Parse(Console.ReadLine())));
                         break;
                 }

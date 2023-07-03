@@ -16,19 +16,22 @@ namespace DesafioProgramacao.Modelagem.Classes
         public string Autor { get; private set; }
         public Usuario AlugadoPor { get; private set; }
         
-        public Livro(string titulo, string autor)
+        public Livro(string titulo, string autor) : this()
         {
-            Id = Interlocked.Increment(ref nextId);
             Titulo = titulo;
             Autor = autor;
             AlugadoPor = null;
         }
 
-        public Livro() { }
-
-        public bool isDisponivel()
+        public Livro()
         {
-            return AlugadoPor == null;
+            Id = ++nextId;
+        }
+
+        public Disponibilidade GetDisponibilidade()
+        {
+            if (AlugadoPor == null) return Disponibilidade.Disponivel;
+            else return Disponibilidade.Indisponivel;
         }
 
         public void Mostrar()
@@ -36,7 +39,7 @@ namespace DesafioProgramacao.Modelagem.Classes
             Console.WriteLine($"Titulo: {Titulo}");
             Console.WriteLine($"Autor: {Autor}");
             Console.WriteLine($"Id: {Id}");
-            if ( isDisponivel() ) Console.WriteLine("Alugado Por: Disponivel");
+            if ( GetDisponibilidade() == Disponibilidade.Disponivel ) Console.WriteLine("Alugado Por: Disponivel");
             else Console.WriteLine($"Alugado Por: {AlugadoPor}");
         }
 

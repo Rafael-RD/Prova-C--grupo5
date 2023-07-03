@@ -14,13 +14,15 @@ namespace DesafioProgramacao.Modelagem.Classes
         public int Id { get; private set; }
         public string Name { get; private set; }
 
-        public Usuario(string name)
+        public Usuario(string name):this() 
         {
-            Id = Interlocked.Increment(ref nextId);
             Name = name;
         }
 
-        public Usuario() { }
+        public Usuario()
+        {
+            Id = ++nextId;
+        }
 
         public void Mostrar()
         {

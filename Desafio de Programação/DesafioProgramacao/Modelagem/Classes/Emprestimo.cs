@@ -15,14 +15,16 @@ namespace DesafioProgramacao.Modelagem.Classes
         public Livro Livro { get; private set; }
         public Usuario Usuario { get; private set; }
 
-        public Emprestimo(Livro livro, Usuario usuario)
+        public Emprestimo(Livro livro, Usuario usuario):this()
         {
-            Interlocked.Increment(ref nextId);
             Livro = livro;
             Usuario = usuario;
         }
 
-        public Emprestimo() { }
+        public Emprestimo()
+        {
+            Id = ++nextId;
+        }
 
         public Emprestimo Criar(Biblioteca biblioteca)
         {

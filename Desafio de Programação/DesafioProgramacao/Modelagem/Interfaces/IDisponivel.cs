@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace DesafioProgramacao.Modelagem.Interfaces
 {
+    public enum Disponibilidade
+    {
+        Disponivel,
+        Indisponivel
+    }
+
     internal interface IDisponivel
     {
-        bool isDisponivel();
+        Disponibilidade GetDisponibilidade();
     }
 }
